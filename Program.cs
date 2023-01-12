@@ -27,27 +27,37 @@ novoEndPF.endComercial = true;
 
 // @ --> serve para indicar quebra de linha automática
 
+// Console.WriteLine(@$"
+// ---------------PESSOA FÍSICA------------------
+// Nome: {novaPF.nome}
+// CPF: {novaPF.cpf}
+// Endereço: {novaPF.endereco.logradouro}, N° {novaPF.endereco.numero}, {novaPF.endereco.complemento}
+// Data de Nascimento: {novaPF.dataNasc}
+// Maior de idade: {novaPF.ValidarDataNasc(novaPF.dataNasc)}
+// ----------------------------------------------
+// Tributação: {impostoPagar.ToString("C")}
+// ----------------------------------------------
+// [testando agora outro método com uma data de 
+// nascimento diferente]
+// [Data de Nascimento: 29/02/2009]
+// [Maior de idade: {novaPF.ValidarDataNasc("29/02/2009")}]
+// ");
+
+PessoaJuridica novaPJ = new PessoaJuridica();
+
+novaPJ.cnpj = "47.960.950/0021-21";
+novaPJ.razaoSocial = "Magazine Luiza";
+
 Console.WriteLine(@$"
----------------PESSOA FÍSICA------------------
-Nome: {novaPF.nome}
-CPF: {novaPF.cpf}
-Endereço: {novaPF.endereco.logradouro}, N° {novaPF.endereco.numero}, {novaPF.endereco.complemento}
-Data de Nascimento: {novaPF.dataNasc}
-Maior de idade: {novaPF.ValidarDataNasc(novaPF.dataNasc)}
-----------------------------------------------
-Tributação: {impostoPagar.ToString("C")}
-----------------------------------------------
-[testando agora outro método com uma data de 
-nascimento diferente]
-[Data de Nascimento: 29/02/2009]
-[Maior de idade: {novaPF.ValidarDataNasc("29/02/2009")}]
+---------------PESSOA JURÍDICA------------------
+
+Razão Social: {novaPJ.razaoSocial}
+CNPJ: {novaPJ.cnpj}
+
+CNPJ é válido? --> {novaPJ.ValidarCnpj(novaPJ.cnpj)}
 ");
 
-// PessoaJuridica novaPJ = new PessoaJuridica();
-
-// novaPJ.razaoSocial = "Magazine Luiza S/A";
-// novaPJ.cnpj = "47.960.950/0001-21";
-
+// Console.WriteLine(novaPJ.ValidarCnpj("60.613.417/1001-51"));
 // Console.WriteLine($"Pessoa Juridica ---------------------");
 // Console.WriteLine($"CNPJ: {novaPJ.cnpj}");
 // Console.WriteLine($"Razão Social: {novaPJ.razaoSocial}");
